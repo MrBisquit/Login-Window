@@ -24,12 +24,12 @@ namespace LoginWindow
 
 
             // Uncomment if you want to show only the Local Login side.
-            AzureLoginGrid.Visibility = Visibility.Collapsed;
-            SplitGrid.Visibility = Visibility.Collapsed;
-            if (LocalLoginGrid.Visibility == Visibility.Visible)
-            {
-                LocalUserNameTextBox.Focus();
-            }
+            //AzureLoginGrid.Visibility = Visibility.Collapsed;
+            //SplitGrid.Visibility = Visibility.Collapsed;
+            //if (LocalLoginGrid.Visibility == Visibility.Visible)
+            //{
+            //    LocalUserNameTextBox.Focus();
+            //}
 
         }
 

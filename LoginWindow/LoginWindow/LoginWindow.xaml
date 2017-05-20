@@ -42,10 +42,10 @@
                     <Button ToolTip="System Information" Width="32" Height="28" Style="{StaticResource WindowActionButton}" Click="BtnActionSystemInformation_OnClick">
                         <Image Source="Icons/gears.png" Height="20" Width="20" Style="{StaticResource UserControlImageStyle}" ></Image>
                     </Button>
-                    <Button ToolTip="Minimieren" Width="32" Height="28" Style="{StaticResource WindowActionButton}" Click="BtnActionMinimize_OnClick">
+                    <Button ToolTip="Minimize" Width="32" Height="28" Style="{StaticResource WindowActionButton}" Click="BtnActionMinimize_OnClick">
                         <Rectangle Fill="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}" Margin="0,16,1,2" Width="9" Height="2" VerticalAlignment="Bottom" d:LayoutOverrides="Height"/>
                     </Button>
-                    <Button ToolTip="Schliessen" Width="32" Height="28" Style="{StaticResource WindowActionButtonClose}" Click="btnActionClose_Click">
+                    <Button ToolTip="Close" Width="32" Height="28" Style="{StaticResource WindowActionButtonClose}" Click="btnActionClose_Click">
                         <Path Width="10" Height="10" Stretch="Fill" Fill="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}" Data="F1 M 26.9166,22.1667L 37.9999,33.25L 49.0832,22.1668L 53.8332,26.9168L 42.7499,38L 53.8332,49.0834L 49.0833,53.8334L 37.9999,42.75L 26.9166,53.8334L 22.1666,49.0833L 33.25,38L 22.1667,26.9167L 26.9166,22.1667 Z "/>
                     </Button>
                 </StackPanel>
@@ -63,7 +63,7 @@
                             <Image Source="Icons/cloud-user.png" Height="64" Width="64" Margin="0,20,0,0" />
                             <Label Content="Azure Login" Margin="0,4,0,12" HorizontalAlignment="Center" Foreground="{DynamicResource MainBlackFontColor}" FontFamily="Segoe UI Semilight" FontSize="26"></Label>
                             <Grid Margin="0,0,0,8">
-                                <TextBlock Margin="4,1,2,0" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" Height="24" Text="Benutzername" Foreground="{StaticResource UserControlButtonIsPressedBrush}"
+                                <TextBlock Margin="4,1,2,0" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" Height="24" Text="Username" Foreground="{StaticResource UserControlButtonIsPressedBrush}"
                                            Visibility="{Binding ElementName=AzureUserNameTextBox, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                 <TextBox Style="{StaticResource LoginTextBoxStyle}" Name="AzureUserNameTextBox" CharacterCasing="Lower" TabIndex="0" />
                             </Grid>
@@ -71,7 +71,7 @@
                                 <PasswordBox HorizontalAlignment="Center" HorizontalContentAlignment="Center" Background="Transparent" BorderBrush="{StaticResource MainBlackFontColor}"  VerticalContentAlignment="Center" Name="AzurePasswordBox" Height="36" Width="220" TabIndex="1" />
                             </Grid>
                             <Grid Margin="0,0,0,8">
-                                <TextBlock Margin="4,1,2,0" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" Height="24" Text="Datenbank" Foreground="{StaticResource UserControlButtonIsPressedBrush}"
+                                <TextBlock Margin="4,1,2,0" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" Height="24" Text="Database" Foreground="{StaticResource UserControlButtonIsPressedBrush}"
                                            Visibility="{Binding ElementName=AzureDatabaseTextBox, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                 <TextBox Style="{StaticResource LoginTextBoxStyle}" Name="AzureDatabaseTextBox" TabIndex="2" />
                             </Grid>
@@ -79,7 +79,7 @@
                             <ProgressBar x:Name="AzureMetroProgressBar" Visibility="Visible" Height="16" Margin="0,4,0,8" HorizontalAlignment="Center"  Width="220" Background="Transparent" BorderBrush="{StaticResource ThemeColorBrush}" Foreground="{DynamicResource ThemeColorBrush}" BorderThickness="1" IsIndeterminate="False" />
 
                             <StackPanel Height="34" />
-                            <Button Name="AzureLoginButton" Content="Anmelden" Width="220" Height="36" TabIndex="3" Margin="0,0,0,32"/>
+                            <Button Name="AzureLoginButton" Content="Login" Width="220" Height="36" TabIndex="3" Margin="0,0,0,32"/>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Column="1" Name="SplitGrid" Width="20" Visibility="Visible">
@@ -88,9 +88,9 @@
                     <Grid Grid.Column="2" Name="LocalLoginGrid" Visibility="Visible" Width="380">
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                             <Image Source="Icons/employees-server.png" Height="64" Width="64" Margin="0,20,0,0" />
-                            <Label Content="Lokale Anmeldung" Margin="0,4,0,12" HorizontalAlignment="Center" Foreground="{DynamicResource MainBlackFontColor}" FontFamily="Segoe UI Semilight" FontSize="26"></Label>
+                            <Label Content="Local Login" Margin="0,4,0,12" HorizontalAlignment="Center" Foreground="{DynamicResource MainBlackFontColor}" FontFamily="Segoe UI Semilight" FontSize="26"></Label>
                             <Grid Margin="0,0,0,8">
-                                <TextBlock Margin="4,1,2,0" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" Height="22" Text="Benutzername" Foreground="{StaticResource UserControlButtonIsPressedBrush}"
+                                <TextBlock Margin="4,1,2,0" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" Height="22" Text="Username" Foreground="{StaticResource UserControlButtonIsPressedBrush}"
                                            Visibility="{Binding ElementName=LocalUserNameTextBox, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                 <TextBox Style="{StaticResource LoginTextBoxStyle}" Name="LocalUserNameTextBox" IsEnabled="{Binding ElementName=WindowsCredentialsCheckBox, Path=IsChecked, Converter={StaticResource ValueConverter}}" CharacterCasing="Lower" TabIndex="4" />
                             </Grid>
@@ -103,8 +103,8 @@
 
                             <ProgressBar x:Name="LocalMetroProgressBar" Visibility="Visible" Height="16" Margin="0,4,0,8" HorizontalAlignment="Center"  Width="220" Background="Transparent" BorderBrush="{StaticResource ThemeColorBrush}" Foreground="{DynamicResource ThemeColorBrush}" BorderThickness="1" IsIndeterminate="False"/>
 
-                            <CheckBox Visibility="Visible" Name="WindowsCredentialsCheckBox" Content="Windows Anmeldeinformationen" Height="26" Margin="-6,0,0,8" HorizontalAlignment="Center" IsChecked="False" VerticalAlignment="Center" Checked="CheckBoxChanged" Unchecked="CheckBoxChanged" TabIndex="7"/>
-                            <Button Name="LocalLoginButton" Content="Anmelden" Width="220" Height="36" Margin="0,0,0,32" TabIndex="8" />
+                            <CheckBox Visibility="Visible" Name="WindowsCredentialsCheckBox" Content="Windows Credentials" Height="26" Margin="-6,0,0,8" HorizontalAlignment="Center" IsChecked="False" VerticalAlignment="Center" Checked="CheckBoxChanged" Unchecked="CheckBoxChanged" TabIndex="7"/>
+                            <Button Name="LocalLoginButton" Content="Login" Width="220" Height="36" Margin="0,0,0,32" TabIndex="8" />
                         </StackPanel>
                     </Grid>
                 </Grid>
